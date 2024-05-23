@@ -1,0 +1,50 @@
+ Kali Linux უკვე გვაქვს მომზადებული და WebGoat და JuiceShop დაყენებულია იქ. ახლა კი უნდა მოვამზადოთ ცალკე სამიზნე მანქანა ან ვირტუალური მანქანა, რომელზეც განვათავსებთ OWASP-ის ვულნერაბელურ ვებ აპლიკაციებს, რათა შემდეგ შევძლოთ მათი გასკანირება და ექსპლოიტაცია Kali-დან.
+ამ სამიზნე მანქანაზე შეგიძლიათ დააინსტალიროთ შემდეგი:
+
+Apache ვებ სერვერი (თუ Ubuntu სისტემაა):
+
+sudo apt-get update
+sudo apt-get install apache2
+
+
+Java Runtime Environment (JRE), რომელიც საჭიროა WebGoat-ის გასაშვებად:
+
+sudo apt-get install default-jre
+
+
+Git კლიენტი WebGoat და JuiceShop-ის GitHub-იდან წამოსაღებად:
+
+sudo apt-get install git
+
+ახლა შეგიძლიათ ჩამოტვირთოთ WebGoat-ისა და JuiceShop-ის ბოლო ვერსიები GitHub-იდან:
+
+webgoaT:
+git clone https://github.com/WebGoat/WebGoat.git
+
+JuiceShop
+
+
+git clone https://github.com/bkimminich/juice-shop.git
+
+შემდეგ WebGoat-ის გასაშვებად:
+
+
+cd WebGoat/webgoat-server
+sudo mvn clean install
+sudo java -Xmx512m -jar webgoat-server-8.0.0.M26.jar
+
+JuiceShop-ის გასაშვებად:
+
+
+cd juice-shop  
+sudo npm install
+sudo npm start
+
+ეს ბრძანებები გაუშვებს WebGoat-სა და JuiceShop-ს ამ სამიზნე მანქანაზე, შესაბამისად 8080 და 3000 პორტებზე.
+შენიშვნა: დარწმუნდით, რომ სამიზნე მანქანაზე დაყენებული გაქვთ საჭირო წინაპირობები: Java, Maven, Node.js და ა.შ.
+ამის შემდეგ, შეძლებთ გაუშვათ სკანირება და ექსპლოიტაცია ამ სავულნერაბელო ვებაპლიკაციებზე თქვენი Kali Linux მანქანიდან OWASP ZAP, Burp Suite და სხვა ინსტრუმენტების გამოყენებით. ეს შექმნის რეალისტურ გარემოს, სადაც თქვენ იქნებით ჰეკერის როლში, ხოლო სხვა მანქანა - ვულნერაბელური სამიზნის როლში.
+
+
+
+
+
