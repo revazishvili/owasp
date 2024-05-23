@@ -1,0 +1,43 @@
+დაყენებული უნდა გქონდეთ Kali Linux (შეგიძლიათ დააყენოთ ვირტუალურ მანქანაზე ან ცალკე მანქანაზე).
+Kali Linux-ზე უნდა დააყენოთ Docker, რომლის მეშვეობითაც შემდეგ დააყენებთ WebGoat და JuiceShop კონტეინერებს:
+
+
+sudo apt-get update
+sudo apt-get install -y docker.io
+
+
+ამის შემდეგ შეგიძლიათ ჩამოტვირთოთ WebGoat და JuiceShop კონტეინერები შემდეგი ბრძანებებით:
+
+
+sudo docker pull webgoat/webgoat-8.0
+sudo docker pull bkimminich/juice-shop
+
+შემდეგ უნდა გაუშვათ ეს კონტეინერები Kali Linux სისტემაზე:
+
+WebGoat:
+
+sudo docker run -p 8080:8080 webgoat/webgoat-8.0
+
+
+sudo docker run -p 8080:8080 webgoat/webgoat-8.0
+
+JuiceShop:
+
+sudo docker run --rm -p 3000:3000 bkimminich/juice-shop
+
+ეს ბრძანებები გაუშვებს WebGoat-ს 8080 პორტზე და JuiceShop-ს 3000 პორტზე. მათ შეგიძლიათ მიხვიდეთ თქვენი Kali სისტემიდან შემდეგი URL-ებით:
+
+http://localhost:8080/WebGoat
+http://localhost:3000
+
+
+დამატებით, კარგი იქნება დააინსტალიროთ სხვა მნიშვნელოვანი ინსტრუმენტები პენტესტინგისთვის Kali-ზე, როგორიცაა:
+
+
+sudo apt-get install burpsuite zap
+
+ეს დააყენებს Burp Suite და OWASP ZAP-ს, რომლებსაც შემდეგ შეძლებთ გამოიყენოთ OWASP აპლიკაციების ტესტირებისთვის.
+ამით თქვენ მზად იქნებით გამოიყენოთ Kali Linux და მასზე დაყენებული WebGoat და JuiceShop აპლიკაციები ვებ აპლიკაციების დაცვის ტესტირებისა და შესწავლისთვის. დარწმუნებული იყავით, რომ Kali გააშვეთ სხვა მანქანაზე ან ვირტუალურ მანქანაზე, რადგან ამგვარად უფრო რეალისტური სცენარი შეიქმნება.
+
+
+
